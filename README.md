@@ -14,7 +14,7 @@ Remix / Next.js / Hono のスターター 3 プロジェクトで
 | **Node.js (npm)** | 比較対象 & スターター依存 | mac:`brew install node`<br>Win:`winget install OpenJS.NodeJS.LTS`<br>Linux:`curl -fsSL https://deb.nodesource.com/setup_20.x \| sudo -E bash - && sudo apt install -y nodejs` |
 | **Bun** | 高速パッケージマネージャ | mac/Linux:`curl -fsSL https://bun.sh/install \| bash`<br>Win (PowerShell):<br>`irm bun.sh/install.ps1 \| iex` |
 | **Hyperfine** | ベンチ計測 & JSON 出力 | mac:`brew install hyperfine`<br>Win:`scoop install hyperfine`<br>Linux:`sudo apt install hyperfine` |
-| **Python 3(任意** | `aggregate.py` を回す | mac:`brew install python`<br>Win:`winget install Python.Python.3`<br>Linux: ほぼ標準で入っている |
+| **Python 3(任意）** | `aggregate.py` を回す | mac:`brew install python`<br>Win:`winget install Python.Python.3`<br>Linux: ほぼ標準で入っている |
 
 > *Bash* は mac/Linux 標準、Windows は PowerShell スクリプトを同梱しています。  
 > Raspberry Pi など ARM64 Linux も同じ手順で OK（**64-bit OS 必須**）。
