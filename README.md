@@ -72,7 +72,7 @@ python3 aggregate.py
 | Raspberry Pi で exec format error | 32-bit OS。64-bit (aarch64) に変更 |
 | PowerShell でスクリプトが実行不可 | Set-ExecutionPolicy -Scope CurrentUser RemoteSigned |
 
-結果ファイル (*.json, *.log) は .gitignore 済み なので、
+結果ファイル (*_cold.json, *_cached.json, *.log) は .gitignore 済み なので、
 必要であれば results/<machine> などに移動して PR してください。
 
 グラフ化したい場合のみ pip install matplotlib して aggregate.py に手を入れれば OK。
