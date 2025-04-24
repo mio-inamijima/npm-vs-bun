@@ -21,7 +21,7 @@ foreach ($p in $projects) {
     Write-Host "移動後のディレクトリ: $(Get-Location)"
     
     Write-Host "cold install のベンチマーク開始..."
-    hyperfine --warmup 1 --runs 5 --prepare "$clean.Invoke()" `
+    hyperfine --warmup 1 --runs 5 --prepare "$($clean.Invoke())" `
       "npm install" "bun install" --export-json "..\$($p)_cold.json"
     Write-Host "cold install のベンチマーク完了"
     
