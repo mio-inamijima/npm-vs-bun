@@ -2,7 +2,7 @@
 $ErrorActionPreference = "Stop"
 
 $PROJECTS = @("remix-app", "next-app", "hono-app")
-$CLEAN = "Remove-Item -Recurse -Force -ErrorAction SilentlyContinue node_modules, bun.lockb, package-lock.json"
+$CLEAN = { Remove-Item -Recurse -Force -ErrorAction SilentlyContinue node_modules, bun.lockb, package-lock.json }
 
 foreach ($P in $PROJECTS) {
     Write-Host "=== Running on $P ==="
@@ -11,7 +11,7 @@ foreach ($P in $PROJECTS) {
     # Cold cache benchmark
     Write-Host "Running cold cache benchmark..."
     hyperfine --warmup 1 --runs 5 `
-        --prepare "$CLEAN" `
+        --prepare "$($CLEAN.Invoke())" `
         'npm install' `
         'bun install' `
         --export-json "../${P}_cold.json"
