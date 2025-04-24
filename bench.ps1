@@ -6,15 +6,16 @@ $CLEAN = { Remove-Item -Recurse -Force -ErrorAction SilentlyContinue node_module
 
 foreach ($P in $PROJECTS) {
     Write-Host "=== Running on $P ==="
-    Set-Location -Path $P
+    Push-Location -Path $P
 
     # Cold cache benchmark
     Write-Host "Running cold cache benchmark..."
-    hyperfine --warmup 1 --runs 5 --prepare "$($CLEAN.Invoke())" "npm install" "bun install" --export-json "../${P}_cold.json"
+    & $CLEAN
+    hyperfine --warmup 1 --runs 5 "npm install" "bun install" --export-json "../${P}_cold.json"
 
     # Cached benchmark
     Write-Host "Running cached benchmark..."
     hyperfine --warmup 1 --runs 5 "npm install" "bun install" --export-json "../${P}_cached.json"
 
-    Set-Location -Path ".."
+    Pop-Location
 }
