@@ -1,7 +1,7 @@
 # npm vs bun ― install 速度ベンチマーク
 
 Remix / Next.js / Hono のスターター 3 プロジェクトで  
-**`npm install` と `bun install`** の速度を Hyperfine で測るだけのリポジトリです。  
+**`npm install` と `bun install`** の速度を Hyperfine で測るリポジトリです。  
 結果は `aggregate.py` でその場で Markdown 表にまとめて CLI に表示できます。
 
 ---
